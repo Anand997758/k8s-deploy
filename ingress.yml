@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress
+  namespace: anand
+  labels:
+    name: myingress
+spec:
+  rules:
+  - host: anand.hanumanthreddy.xyz
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: stativ-svc
+            port: 
+              number: 80
